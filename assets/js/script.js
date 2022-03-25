@@ -115,22 +115,47 @@ function startCoinCeremony(evt){
     evt.preventDefault();
     
     for(i=0;i<choreChart.length;i++){
-        choreChart[i].noChore = $(`#chore${i+1}`).val();
-        choreChart[i].caseyComplete = $(`#caseyCompletedChore${i+1}`).val();
-        choreChart[i].connorComplete = $(`#connorCompletedChore${i+1}`).val();
+      if($(`#chore${i}`).is(":checked")){  
+        choreChart[i].noChore = true;
+      } else{
+        choreChart[i].noChore = false;
+      }
+      
+      if($(`#caseyCompletedChore${i}`).is(":checked")){  
+        choreChart[i].caseyComplete = 1;
+      } else{
+        choreChart[i].caseyComplete = 0;
+      }
+      
+      if($(`#connorCompletedChore${i}`).is(":checked")){  
+        choreChart[i].connorComplete = 1;
+      } else{
+        choreChart[i].connorComplete = 0;
+      }
     };
-
-    console.log(choreChart);
 
     var choreWinners = [];
 
     for(i=0;i<choreChart.length;i++){
-        if(choreChart[i].noChore === 'off'){
+        if(!choreChart[i].noChore){
             choreWinners.push(i);
         }
     };
     
     console.log(choreWinners);
+    
+    var winningNumber
+     
+    for(i=0;i<6;i++){
+      winningNumber = Math.floor(Math.random() * choreWinners.length);
+      alert(`The Winning Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
+      choreWinners.splice(winningNumber, 1);
+      console.log(winningNumber);
+    }
+
+
+
+
 };
 
 
