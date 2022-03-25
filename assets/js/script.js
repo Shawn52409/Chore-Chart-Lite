@@ -1,79 +1,136 @@
 var currentDate = moment().format('dddd (l)');
 
 
-// function called after a search is made
+var choreChart = [
+    {
+      "choreName": "Brush teeth in the morning",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Hang up book bags after school",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Dishes cleaned off and in the dishwasher after breakfast",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Dishes cleaned off and in the dishwasher after dinner",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Lights off after leaving a room",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "No fighting",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "No complaining about bedtime",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "No complaining about homework",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Say something nice to your brother",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Put away electronics after use",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Clothes in hamper and towels hung up",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Dresser drawers closed after use",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Clean up mess after done playing (any room)",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Tablets and ipads plugged in",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Shoes in bin",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Outside toys put away",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Toothpaste cleaned out of sink",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "In bed by 9pm",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    }
+]
 function startCoinCeremony(evt){    
     evt.preventDefault();
     
-    var results = {};
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore2 = $("#chore2").val();
-    var caseyCompletedChore2 = $("#caseyCompletedChore2").val();
-    var connorCompletedChore2 = $("#connorCompletedChore2").val();
-    var chore3 = $("#chore3").val();
-    var caseyCompletedChore3 = $("#caseyCompletedChore3").val();
-    var connorCompletedChore3 = $("#connorCompletedChore3").val();
-    var chore4 = $("#chore4").val();
-    var caseyCompletedChore4 = $("#caseyCompletedChore4").val();
-    var connorCompletedChore4 = $("#connorCompletedChore4").val();
-    var chore5 = $("#chore5").val();
-    var caseyCompletedChore5 = $("#caseyCompletedChore5").val();
-    var connorCompletedChore5 = $("#connorCompletedChore5").val();
-    var chore6 = $("#chore6").val();
-    var caseyCompletedChore6 = $("#caseyCompletedChore6").val();
-    var connorCompletedChore6 = $("#connorCompletedChore6").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
-    var chore1 = $("#chore1").val();
-    var caseyCompletedChore1 = $("#caseyCompletedChore1").val();
-    var connorCompletedChore1 = $("#connorCompletedChore1").val();
+    for(i=0;i<choreChart.length;i++){
+        choreChart[i].noChore = $(`#chore${i+1}`).val();
+        choreChart[i].caseyComplete = $(`#caseyCompletedChore${i+1}`).val();
+        choreChart[i].connorComplete = $(`#connorCompletedChore${i+1}`).val();
+    };
 
+    console.log(choreChart);
 
+    var choreWinners = [];
 
-
-
-    // for(i=0;i<18;i++){
+    for(i=0;i<choreChart.length;i++){
+        if(choreChart[i].noChore === 'off'){
+            choreWinners.push(i);
+        }
+    };
     
-    
-    // var ${`chore1CheckBox${i}`} = $(`#chore${i}`).val();
-    // var ${`caseyCompletedChore${i}`} = $(`#caseyCompletedChore${i}`).val();
-    // var ${`caseyCompletedChore${i}`} = $(`#caseyCompletedChore${i}`).val();
-
-    // }
-
+    console.log(choreWinners);
 };
 
 
