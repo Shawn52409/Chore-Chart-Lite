@@ -146,16 +146,16 @@ function startCoinCeremony(evt){
     
     var winningNumber
      
-    for(i=0;i<6;i++){
+    for(i=0;i<7;i++){
       winningNumber = Math.floor(Math.random() * choreWinners.length);
-      alert(`The Winning Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
-      choreWinners.splice(winningNumber, 1);
-      console.log(winningNumber);
+      if (i<6) {
+        alert(`The Winning Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
+        choreWinners.splice(winningNumber, 1);
+        } else {
+        alert(`Today's Bonus Lucky Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
+        choreWinners.splice(winningNumber, 1);
+        }
     }
-
-
-
-
 };
 
 
