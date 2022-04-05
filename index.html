@@ -28,16 +28,19 @@
     </header>
     <div id="form">
       <form action="results.html" method="GET">
+        <div class="fixTableHead">
         <table>
           <div class="text-center p-4">
           <button id="reset-btn" class="bg-danger text-white" type="reset">Remove All Checks</button>
           </div>
-          <tr>
-            <th>Do Not Count</th>
-            <th class="text-left pl-3">Chore Name</th>
-            <th>Casey</th>
-            <th>Connor</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Do Not Count</th>
+              <th class="text-left pl-3">Chore Name</th>
+              <th>Casey</th>
+              <th>Connor</th>
+            </tr>
+          </thead>
           <tr>
             <td><input type="checkbox" name="chore0" id="chore0"></td>
             <td class="text-left pl-3">Brush teeth in the morning</td>
@@ -147,6 +150,7 @@
             <td><input type="checkbox" name="connorCompletedChore17" id="connorCompletedChore17"></td>
           </tr>
         </table>
+      </div>
         <div class="text-center m-4">
         <button id="startCoinCeremony-btn"><span class="p-2 img-fluid img-smaller img-spin">💰</span>Start Coin Ceremony<span class="p-2">💰</span></button>
         </div>
