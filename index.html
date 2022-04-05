@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <header class="jumbotron">
+    <header id="header">
       <div class="display-4"><b>Casey & Connor's<br>Chore Chart</b></div>
     </header>
     <div id="form">
@@ -31,14 +31,14 @@
         <div class="fixTableHead">
         <table>
           <div class="text-center p-4">
-          <button id="reset-btn" class="bg-danger text-white" type="reset">Remove All Checks</button>
+          <button id="reset-btn" type="reset">Remove All Checks</button>
           </div>
           <thead>
             <tr>
               <th>Do Not Count</th>
               <th class="text-left pl-3">Chore Name</th>
-              <th>Casey</th>
-              <th>Connor</th>
+              <th id="caseyName">Casey</th>
+              <th id="connorName">Connor</th>
             </tr>
           </thead>
           <tr>

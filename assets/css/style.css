@@ -3,7 +3,7 @@ button,form{
     margin-right: 1em;
 }
 
-.jumbotron {
+#header{
     text-align: center;
     background-image: url(../img/Teddy-peaking.jpg);
     height: 100%;
@@ -16,14 +16,18 @@ button,form{
 				  1px -1px 0 #000,
 				  -1px -1px 0 #000;
     border-radius: 0;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid burlywood;
+    padding: 2%;
 }
 
-form{
+#form{
     background-image: url(../img/Teddys.jpg);
+}
+
+
+form{
     font-weight: bold;
-    padding: 2%;
-    
+    padding: 2%;    
 }
 
 .fixTableHead thead th {
@@ -44,16 +48,20 @@ table,th,tr,td{
 
 tbody tr:nth-child(odd) {
     background-color: #9d79619a;
-  }
+}
   
-  tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: rgba(222, 184, 135, 0.65);
-  }
+}
   
 
-  
-
-
+#reset-btn{
+    color: burlywood;
+    background-color: red;
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 10px; 
+}
 
 #startCoinCeremony-btn{
     color: yellow;
@@ -62,5 +70,3 @@ tbody tr:nth-child(odd) {
     font-size: 14px;
     border-radius: 10px;    
 }
-
-
