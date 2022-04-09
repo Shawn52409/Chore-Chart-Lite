@@ -15,13 +15,7 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Dishes cleaned off and in the dishwasher after breakfast",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Dishes cleaned off and in the dishwasher after dinner",
+      "choreName": "Dishes cleaned off and in the dishwasher after every meal",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -152,8 +146,20 @@ function startCoinCeremony(evt){
         alert(`The Winning Chore is: \r\n#${i+1} ${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
         choreWinners.splice(winningNumber, 1);
         } else {
-        alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
-        choreWinners.splice(winningNumber, 1);
+          var bonusNumber = Math.floor(Math.random() * 4 + 1);
+          var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1) + 3);
+          if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
+          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!`)  
+          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
+          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nNo one wins ${numberOfBonusCoins} Coins!`)
+          } else {
+            alert("Sorry no bonus chore today.");
+          }
+          choreWinners.splice(winningNumber, 1);
         }
     }
 };
