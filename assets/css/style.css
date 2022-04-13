@@ -70,3 +70,43 @@ tbody tr:nth-child(even) {
     font-size: 14px;
     border-radius: 10px;    
 }
+
+#results{
+    text-align: center;
+    width: auto;
+    background-image: url(../img/Teddys.jpg);
+    color: black;
+    font-weight: bolder;
+}
+
+.results:nth-child(odd){
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: auto;
+    padding: 2%;
+    margin: 1%;
+    background-color: #9d79619a;
+}
+.results:nth-child(even){
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: auto;
+    padding: 2%;
+    margin: 1%;
+    background-color: rgba(222, 184, 135, 0.65);
+}
+
+/* #results0{
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+  
+@keyframes example {
+    0%   {left:0px; top:-9999px;}
+    100%  {left:0px; top:0px;}
+
+} */

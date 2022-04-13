@@ -105,28 +105,35 @@ var choreChart = [
       "connorComplete": false,
     }
 ]
+
+function updateChoreChart(){
+  for(i=0;i<choreChart.length;i++){
+    if($(`#chore${i}`).is(":checked")){  
+      choreChart[i].noChore = true;
+    } else{
+      choreChart[i].noChore = false;
+    }
+    
+    if($(`#caseyCompletedChore${i}`).is(":checked")){  
+      choreChart[i].caseyComplete = 1;
+    } else{
+      choreChart[i].caseyComplete = 0;
+    }
+    
+    if($(`#connorCompletedChore${i}`).is(":checked")){  
+      choreChart[i].connorComplete = 1;
+    } else{
+      choreChart[i].connorComplete = 0;
+    }
+  };
+};
+
+
+
 function startCoinCeremony(evt){    
     evt.preventDefault();
     
-    for(i=0;i<choreChart.length;i++){
-      if($(`#chore${i}`).is(":checked")){  
-        choreChart[i].noChore = true;
-      } else{
-        choreChart[i].noChore = false;
-      }
-      
-      if($(`#caseyCompletedChore${i}`).is(":checked")){  
-        choreChart[i].caseyComplete = 1;
-      } else{
-        choreChart[i].caseyComplete = 0;
-      }
-      
-      if($(`#connorCompletedChore${i}`).is(":checked")){  
-        choreChart[i].connorComplete = 1;
-      } else{
-        choreChart[i].connorComplete = 0;
-      }
-    };
+    updateChoreChart();
 
     var choreWinners = [];
 
@@ -136,33 +143,46 @@ function startCoinCeremony(evt){
         }
     };
     
-    console.log(choreWinners);
+    document.body.innerHTML = `
+    <header id="header">
+      <div class="display-4"><b>Results</b></div>
+    </header>
+    <div id="results">
+    <a href="./index.html">Back to Form</a>
+    <div id="result0" class="results"></div>
+    <div id="result1" class="results"></div>
+    <div id="result2" class="results"></div>
+    <div id="result3" class="results"></div>
+    <div id="result4" class="results"></div>
+    <div id="result5" class="results"></div>
+    <div id="resultBonus" class="results"></div>
+    <div>`;
     
     var winningNumber
-     
     for(i=0;i<7;i++){
       winningNumber = Math.floor(Math.random() * choreWinners.length);
-      if (i<6) {
-        alert(`The Winning Chore is: \r\n#${i+1} ${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!\r\n \r\nConnor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
-        choreWinners.splice(winningNumber, 1);
-        } else {
-          var bonusNumber = Math.floor(Math.random() * 4 + 1);
-          var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1) + 3);
-          if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
-            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
-          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
-            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!`)  
-          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
-            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
-          } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
-            alert(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nNo one wins ${numberOfBonusCoins} Coins!`)
-          } else {
-            alert("Sorry no bonus chore today.");
-          }
+          
+        if (i<6) {
+          $(`#result${i}`).append(`The Winning Chore is: \r\n#${i+1} ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!<br>Connor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
           choreWinners.splice(winningNumber, 1);
-        }
-    }
-};
+          } else {
+            var bonusNumber = Math.floor(Math.random() * 4 + 1);
+            var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1) + 3);
+            if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+              $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+              $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nCasey Wins ${numberOfBonusCoins} Coins!`)  
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+              $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nConnor Wins ${numberOfBonusCoins} Coins!`)
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+              $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}\r\n \r\nNo one wins ${numberOfBonusCoins} Coins!`)
+            } else {
+              $(`#resultBonus`).append("Sorry no bonus chore today.");
+            }
+            choreWinners.splice(winningNumber, 1);
+          }
+      }
+  };
 
 
 // Search button handler
