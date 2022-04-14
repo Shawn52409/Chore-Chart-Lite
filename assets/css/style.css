@@ -84,7 +84,7 @@ tbody tr:nth-child(even) {
     border-color: black;
     border-radius: 10px;
     border-width: auto;
-    padding: 2%;
+    padding: 1%;
     margin: 1%;
     background-color: #9d79619a;
 }
@@ -93,20 +93,95 @@ tbody tr:nth-child(even) {
     border-color: black;
     border-radius: 10px;
     border-width: auto;
-    padding: 2%;
+    padding: 1%;
     margin: 1%;
     background-color: rgba(222, 184, 135, 0.65);
 }
 
-/* #results0{
+/* #result0{
     position: relative;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-iteration-count: 3;
+    animation-name: result0;
+    animation-duration: 5s;
 }
   
-@keyframes example {
-    0%   {left:0px; top:-9999px;}
+@keyframes result0 {
+    0%   {left:0px; top:2000px;}
     100%  {left:0px; top:0px;}
 
+}
+#result1{
+    position: relative;
+    animation-name: result1;
+    animation-duration: 15s;
+}
+  
+@keyframes result1 {
+    0%   {left:0px; top:6000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#result2{
+    position: relative;
+    animation-name: result2;
+    animation-duration: 25s;
+}
+  
+@keyframes result2 {
+    0%   {left: 0px; top:10000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#result3{
+    position: relative;
+    animation-name: result3;
+    animation-duration: 35s;
+}
+  
+@keyframes result3 {
+    0%   {left:0px; top:14000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#result4{
+    position: relative;
+    animation-name: result4;
+    animation-duration: 45s;
+}
+  
+@keyframes result4 {
+    0%   {left:0px; top:18000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#result5{
+    position: relative;
+    animation-name: result5;
+    animation-duration: 55s;
+}
+  
+@keyframes result5 {
+    0%   {left:0px; top:22000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#result6{
+    position: relative;
+    animation-name: result6;
+    animation-duration: 65s;
+}
+  
+@keyframes result6 {
+    0%   {left:0px; top:26000px;}
+    100%  {left:0px; top:0px;}
+
+}
+#resultBonus{
+    position: relative;
+    animation-name: resultBonus;
+    animation-duration: 75s;
+}
+  
+@keyframes resultBonus {
+    0%   {left:0px; top:30000px;}
+    100%  {left:0px; top:0px;}
 } */
