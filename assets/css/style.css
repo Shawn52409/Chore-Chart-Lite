@@ -98,90 +98,97 @@ tbody tr:nth-child(even) {
     background-color: rgba(222, 184, 135, 0.65);
 }
 
-/* #result0{
+#result0{
     position: relative;
     animation-name: result0;
-    animation-duration: 5s;
+    animation-duration: 60s;
 }
   
 @keyframes result0 {
-    0%   {left:0px; top:2000px;}
-    100%  {left:0px; top:0px;}
+    0%  {opacity: 0;}
+    10%    {opacity: 1;}
 
 }
+
 #result1{
     position: relative;
     animation-name: result1;
-    animation-duration: 15s;
+    animation-duration: 60s;
 }
   
 @keyframes result1 {
-    0%   {left:0px; top:6000px;}
-    100%  {left:0px; top:0px;}
+    0%   {opacity: 0;}
+    10% {opacity: 0;}
+    20%  {opacity: 1;}
 
 }
 #result2{
     position: relative;
     animation-name: result2;
-    animation-duration: 25s;
+    animation-duration: 60s;
 }
   
 @keyframes result2 {
-    0%   {left: 0px; top:10000px;}
-    100%  {left:0px; top:0px;}
+    0%   {opacity: 0;}
+    20% {opacity: 0;}
+    30%  {opacity: 1;}
 
 }
 #result3{
     position: relative;
     animation-name: result3;
-    animation-duration: 35s;
+    animation-duration: 60s;
 }
   
 @keyframes result3 {
-    0%   {left:0px; top:14000px;}
-    100%  {left:0px; top:0px;}
+    0%   {opacity: 0;}
+    30% {opacity: 0;}
+    40%  {opacity: 1;}
 
 }
 #result4{
     position: relative;
     animation-name: result4;
-    animation-duration: 45s;
+    animation-duration: 60s;
 }
   
 @keyframes result4 {
-    0%   {left:0px; top:18000px;}
-    100%  {left:0px; top:0px;}
+    0%   {opacity: 0;}
+    40% {opacity: 0;}
+    50%  {opacity: 1;}
 
 }
 #result5{
     position: relative;
     animation-name: result5;
-    animation-duration: 55s;
+    animation-duration: 60s;
 }
   
 @keyframes result5 {
-    0%   {left:0px; top:22000px;}
-    100%  {left:0px; top:0px;}
-
+    0%   {opacity: 0;}
+    50% {opacity: 0;}
+    60%  {opacity: 1;}
 }
 #result6{
     position: relative;
     animation-name: result6;
-    animation-duration: 65s;
+    animation-duration: 60s;
 }
   
 @keyframes result6 {
-    0%   {left:0px; top:26000px;}
-    100%  {left:0px; top:0px;}
-
+    0%   {opacity: 0;}
+    60% {opacity: 0;}
+    70%  {opacity: 1;}
 }
+
 #resultBonus{
     position: relative;
     animation-name: resultBonus;
-    animation-duration: 75s;
+    animation-duration: 60s;
 }
   
 @keyframes resultBonus {
-    0%   {left:0px; top:30000px;}
-    100%  {left:0px; top:0px;}
-} */
+    0%   {opacity: 0;}
+    70% {opacity: 0;}
+    80%  {opacity: 1;}
+}
