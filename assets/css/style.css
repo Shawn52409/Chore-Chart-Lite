@@ -158,7 +158,7 @@ tbody tr:nth-child(even) {
     50%  {opacity: 1;}
 
 }
-#result5{
+/* #result5{
     position: relative;
     animation-name: result5;
     animation-duration: 60s;
@@ -168,18 +168,7 @@ tbody tr:nth-child(even) {
     0%   {opacity: 0;}
     50% {opacity: 0;}
     60%  {opacity: 1;}
-}
-#result6{
-    position: relative;
-    animation-name: result6;
-    animation-duration: 60s;
-}
-  
-@keyframes result6 {
-    0%   {opacity: 0;}
-    60% {opacity: 0;}
-    70%  {opacity: 1;}
-}
+} */
 
 #resultBonus{
     position: relative;
@@ -189,6 +178,6 @@ tbody tr:nth-child(even) {
   
 @keyframes resultBonus {
     0%   {opacity: 0;}
-    70% {opacity: 0;}
-    80%  {opacity: 1;}
+    50% {opacity: 0;}
+    60% {opacity: 1;}
 }

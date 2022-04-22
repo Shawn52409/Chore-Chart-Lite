@@ -1,15 +1,26 @@
-var currentDate = moment().format('dddd (l)');
-
+var currentDate = moment().format('dddd');
 
 var choreChart = [
     {
-      "choreName": "Brush teeth in the morning",
+      "choreName": "Brush teeth in the morning and night",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
     },
     {
-      "choreName": "Hang up book bags after school",
+      "choreName": "Water bottles on counter in the morning",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Ipads in bookbags on school mornings",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Book bags hung up and shoes put in bin",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -33,13 +44,7 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "No complaining about bedtime",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "No complaining about homework",
+      "choreName": "No complaining or growling about anything",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -51,7 +56,13 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Put away electronics after use",
+      "choreName": "Do something above and beyond to help out",
+      "noChore": false,
+      "caseyComplete": false,
+      "connorComplete": false,
+    },
+    {
+      "choreName": "Put away all toys inside and out (including electronics)",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -69,25 +80,7 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Clean up mess after done playing (any room)",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
       "choreName": "Tablets and ipads plugged in",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Shoes in bin",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Outside toys put away",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -98,13 +91,49 @@ var choreChart = [
       "caseyComplete": false,
       "connorComplete": false,
     },
-    {
-      "choreName": "In bed by 9pm",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    }
 ]
+  
+
+var chart = "";
+for(i=0;i<choreChart.length;i++){
+  chart += `
+  <tr>
+    <td><input type="checkbox" name="chore${i}" id="chore${i}"></td>
+    <td class="text-left pl-3">${choreChart[i].choreName}</td>
+    <td><input type="checkbox" name="caseyCompletedChore${i}" id="caseyCompletedChore${i}"></td>
+    <td><input type="checkbox" name="connorCompletedChore${i}" id="connorCompletedChore${i}"></td>
+  </tr>
+`
+}
+
+document.body.innerHTML = `
+<header id="header">
+<div class="display-4"><b>Casey & Connor's<br>Chore Chart</b></div>
+</header>
+<div id="form">
+<form action="results.html" method="GET">
+<div class="fixTableHead">
+<table>
+  <div class="text-center p-4">
+  <button id="reset-btn" type="reset">Remove All Checks</button>
+  </div>
+  <thead>
+    <tr>
+      <th>Do Not Count</th>
+      <th class="text-left pl-3">Chore Name</th>
+      <th id="caseyName">Casey</th>
+      <th id="connorName">Connor</th>
+    </tr>
+  </thead>
+  ${chart}
+  </table>
+  </div>
+  <div class="text-center m-4">
+  <button id="startCoinCeremony-btn"><span class="p-2 img-fluid img-smaller img-spin">💰</span>Start Coin Ceremony<span class="p-2">💰</span></button>
+  </div>
+  </form>
+  </div>
+  `
 
 function updateChoreChart(){
   for(i=0;i<choreChart.length;i++){
@@ -143,9 +172,10 @@ function startCoinCeremony(evt){
         }
     };
     
+
     document.body.innerHTML = `
     <header id="header">
-      <div class="display-4"><b>Results</b></div>
+      <div class="display-4"><b>${currentDate}<br>Results</b></div>
     </header>
     <div id="results">
     <a href="./index.html">Back to Form</a>
@@ -154,20 +184,20 @@ function startCoinCeremony(evt){
     <div id="result2" class="results"></div>
     <div id="result3" class="results"></div>
     <div id="result4" class="results"></div>
-    <div id="result5" class="results"></div>
     <div id="resultBonus" class="results"></div>
     <div>`;
     
     var winningNumber
-    for(i=0;i<7;i++){
+    for(i=0;i<6;i++){
       winningNumber = Math.floor(Math.random() * choreWinners.length);
-        if (i<6) {
+        if (i<5) {
           $(`#result${i}`).append(`The Winning Chore is: \r\n#${i+1} ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!<br>Connor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
           choreWinners.splice(winningNumber, 1);
           
           } else {
-            var bonusNumber = Math.floor(Math.random() * 4 + 1);
-            var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1) + 3);
+            var bonusNumber = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+            console.log(bonusNumber);
+            var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
             if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: \r\n${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${numberOfBonusCoins} Coins!<br>Connor Wins ${numberOfBonusCoins} Coins!`)
             } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
