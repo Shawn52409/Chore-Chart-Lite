@@ -1,7 +1,19 @@
 var currentDate = moment().format('dddd');
 
 var choreChart = [
-    {
+  {
+    "choreName": "Say something nice to your brother",
+    "noChore": false,
+    "caseyComplete": false,
+    "connorComplete": false,
+  },
+  {
+    "choreName": "Do something above and beyond to help out",
+    "noChore": false,
+    "caseyComplete": false,
+    "connorComplete": false,
+  },
+  {
       "choreName": "Brush teeth in the morning and night",
       "noChore": false,
       "caseyComplete": false,
@@ -50,18 +62,6 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Say something nice to your brother",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Do something above and beyond to help out",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
       "choreName": "Put away all toys inside and out (including electronics)",
       "noChore": false,
       "caseyComplete": false,
@@ -95,7 +95,18 @@ var choreChart = [
   
 
 var chart = "";
-for(i=0;i<choreChart.length;i++){
+for(i=0; i<2; i++){
+chart += `
+<tr>
+  <td><name="chore${i}" id="chore${i}"></td>
+  <td class="text-left pl-3">${choreChart[i].choreName}</td>
+  <td><input type="checkbox" name="caseyCompletedChore${i}" id="caseyCompletedChore${i}"></td>
+  <td><input type="checkbox" name="connorCompletedChore${i}" id="connorCompletedChore${i}"></td>
+</tr>
+`
+}
+
+for(i=2;i<choreChart.length;i++){
   chart += `
   <tr>
     <td><input type="checkbox" name="chore${i}" id="chore${i}"></td>
@@ -166,7 +177,7 @@ function startCoinCeremony(evt){
 
     var choreWinners = [];
 
-    for(i=0;i<choreChart.length;i++){
+    for(i=2;i<choreChart.length;i++){
         if(!choreChart[i].noChore){
             choreWinners.push(i);
         }
@@ -184,18 +195,22 @@ function startCoinCeremony(evt){
     <div id="result2" class="results"></div>
     <div id="result3" class="results"></div>
     <div id="result4" class="results"></div>
+    <div id="result5" class="results"></div>
     <div id="resultBonus" class="results"></div>
     <div>`;
     
     var winningNumber
-    for(i=0;i<6;i++){
+    for(i=0;i<7;i++){
       winningNumber = Math.floor(Math.random() * choreWinners.length);
-        if (i<5) {
+        if (i<4) {
           $(`#result${i}`).append(`The Winning Chore is: \r\n#${i+1} ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!<br>Connor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
           choreWinners.splice(winningNumber, 1);
-          
-          } else {
-            var bonusNumber = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+          } else if (i===4){
+            $(`#result${i}`).append(`The Winning Chore is: \r\n#${i+1} ${choreChart[0].choreName}<br>Casey Wins ${choreChart[0].caseyComplete} Coin!<br>Connor Wins ${choreChart[0].connorComplete} Coin!`)
+          } else if (i===5){
+            $(`#result${i}`).append(`The Winning Chore is: \r\n#${i+1} ${choreChart[1].choreName}<br>Casey Wins ${choreChart[1].caseyComplete} Coin!<br>Connor Wins ${choreChart[1].connorComplete} Coin!`)
+          } else if (i===6){
+            var bonusNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
             console.log(bonusNumber);
             var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
             if(bonusNumber == 3 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
