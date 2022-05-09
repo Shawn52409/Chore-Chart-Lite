@@ -14,19 +14,13 @@ var choreChart = [
     "connorComplete": false,
   },
   {
-      "choreName": "Brush teeth in the morning and night",
+      "choreName": "Brush teeth in the morning and night and clean sink",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
     },
     {
-      "choreName": "Water bottles on counter in the morning",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Ipads in bookbags on school mornings",
+      "choreName": "Water bottles on counter  and ipads in bookbags in the morning",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -81,12 +75,6 @@ var choreChart = [
     },
     {
       "choreName": "Tablets and ipads plugged in",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
-      "choreName": "Toothpaste cleaned out of sink",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
