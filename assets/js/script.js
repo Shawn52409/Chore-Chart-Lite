@@ -14,19 +14,30 @@ var choreChart = [
     "connorComplete": false,
   },
   {
-      "choreName": "Brush teeth in the morning and night and clean sink",
+    "choreName": "Read for 15 minutes or more",
+    "noChore": false,
+    "caseyComplete": false,
+    "connorComplete": false,
+  },
+  {
+    "choreName": "Bedroom clean and bed made",
+    "caseyComplete": false,
+    "connorComplete": false,
+  },
+  {
+      "choreName": "Brush teeth in the morning and night, and clean sink",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
     },
     {
-      "choreName": "Water bottles on counter  and ipads in bookbags in the morning",
+      "choreName": "Water bottles on counter and ipads in bookbags in the morning",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
     },
     {
-      "choreName": "Book bags hung up and shoes put in bin",
+      "choreName": "Shoes put in bin",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -50,7 +61,7 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "No complaining or growling about anything",
+      "choreName": "No complaining, whining or growling about anything",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -68,7 +79,7 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Dresser drawers closed after use",
+      "choreName": "Dresser drawers, including bins closed after use",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
@@ -81,7 +92,7 @@ var choreChart = [
     },
 ]
   
-
+// Create variables for chart
 var chart = "";
 for(i=0; i<2; i++){
 chart += `
@@ -105,6 +116,7 @@ for(i=2;i<choreChart.length;i++){
 `
 }
 
+// Create chart
 document.body.innerHTML = `
 <header id="header">
 <div class="display-4"><b>Casey & Connor's<br>Chore Chart</b></div>
@@ -133,7 +145,7 @@ document.body.innerHTML = `
   </form>
   </div>
   `
-
+// Save checked info to chart array
 function updateChoreChart(){
   for(i=0;i<choreChart.length;i++){
     if($(`#chore${i}`).is(":checked")){  
@@ -157,7 +169,7 @@ function updateChoreChart(){
 };
 
 
-
+// Create results for chore chart based off of checked boxes
 function startCoinCeremony(evt){    
     evt.preventDefault();
     
@@ -171,7 +183,7 @@ function startCoinCeremony(evt){
         }
     };
     
-
+// Change body of html to display results
     document.body.innerHTML = `
     <header id="header">
       <div class="display-4"><b>${currentDate}<br>Results</b></div>
@@ -228,5 +240,5 @@ function startCoinCeremony(evt){
   };
 
 
-// Search button handler
+// Start coin ceremony button handler
 $("#startCoinCeremony-btn").on("click", startCoinCeremony);
