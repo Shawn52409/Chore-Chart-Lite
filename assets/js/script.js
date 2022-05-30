@@ -31,12 +31,6 @@ var choreChart = [
       "connorComplete": false,
     },
     {
-      "choreName": "Water bottles on counter and ipads in bookbags in the morning",
-      "noChore": false,
-      "caseyComplete": false,
-      "connorComplete": false,
-    },
-    {
       "choreName": "Shoes put in bin",
       "noChore": false,
       "caseyComplete": false,
