@@ -14,6 +14,12 @@ var choreChart = [
     "connorComplete": false,
   },
   {
+    "choreName": "No fighting, complaining, whining or growling about anything",
+    "noChore": false,
+    "caseyComplete": false,
+    "connorComplete": false,
+  },
+  {
     "choreName": "Say something nice about your self",
     "noChore": false,
     "caseyComplete": false,
@@ -44,12 +50,6 @@ var choreChart = [
   },
   {
     "choreName": "Lights and tv off after leaving a room",
-    "noChore": false,
-    "caseyComplete": false,
-    "connorComplete": false,
-  },
-  {
-    "choreName": "No fighting, complaining, whining or growling about anything",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
@@ -205,13 +205,13 @@ function startCoinCeremony(evt){
             var bonusNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
             console.log(bonusNumber);
             var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
-            if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+            if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1 && choreChart[2].caseyComplete == 1 && choreChart[2].connorComplete == 1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${numberOfBonusCoins} Coins!<br>Connor Wins ${numberOfBonusCoins} Coins!`)
-            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1 && choreChart[2].caseyComplete == 1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${numberOfBonusCoins} Coins!`)  
-            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1){
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1 && choreChart[2].connorComplete == 1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: ${choreChart[choreWinners[winningNumber]].choreName}<br>Connor Wins ${numberOfBonusCoins} Coins!`)
-            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1){
+            } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete != 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1 || choreChart[2].caseyComplete !=1 && choreChart[2].connorComplete !=1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: ${choreChart[choreWinners[winningNumber]].choreName}<br>No one wins ${numberOfBonusCoins} Coins!`)
             } else {
               $(`#resultBonus`).append("Sorry no bonus chore today.");
