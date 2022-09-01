@@ -2,13 +2,13 @@ var currentDate = moment().format('dddd');
 
 var choreChart = [
   {
-    "choreName": "Say something nice to your brother",
+    "choreName": "Say something nice to your brother (Any negative words to your brother cancels this for the day)",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Do something above and beyond to help out",
+    "choreName": "Do something above and beyond to help out without being asked to",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
@@ -20,54 +20,30 @@ var choreChart = [
     "connorComplete": false,
   },
   {
-    "choreName": "Say something nice about your self",
+    "choreName": "Complete all homework, hangup book bag, shoes in bin, water bottles on counter, tablets plugged in",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Read for 15 minutes or more",
-    "noChore": false,
+    "choreName": "Bedroom clean, carpet nice, closet door closed, bed made nicely, dirty clothes in hamper, towels hung up and all clothes drawers closed",
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Bedroom clean and bed made",
-    "caseyComplete": false,
-    "connorComplete": false,
-  },
-  {
-      "choreName": "Brush teeth in the morning and night, and clean sink",
+      "choreName": "Brush teeth in the morning and night, and clean sink and counter",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
   },
   {
-    "choreName": "Dishes cleaned off and in the dishwasher after every meal",
+    "choreName": "All dishes, cups, medicine cups cleaned off and in the dishwasher after every meal",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Lights and tv off after leaving a room",
-    "noChore": false,
-    "caseyComplete": false,
-    "connorComplete": false,
-  },
-  {
-    "choreName": "Family room clean",
-    "noChore": false,
-    "caseyComplete": false,
-    "connorComplete": false,
-  },
-  {
-    "choreName": "Dirty clothes in hamper, towels hung up and all clothes drawers closed",
-    "noChore": false,
-    "caseyComplete": false,
-    "connorComplete": false,
-  },
-  {
-    "choreName": "Tablets plugged in",
+    "choreName": "Lights and tv off after leaving a room and family clutter free",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
@@ -202,7 +178,7 @@ function startCoinCeremony(evt){
             }
 
           } else if (i===6){
-            var bonusNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+            var bonusNumber = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
             console.log(bonusNumber);
             var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
             if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1 && choreChart[2].caseyComplete == 1 && choreChart[2].connorComplete == 1){
