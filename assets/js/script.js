@@ -2,48 +2,48 @@ var currentDate = moment().format('dddd');
 
 var choreChart = [
   {
-    "choreName": "Say something nice to your brother (Any negative words to your brother cancels this for the day)",
+    "choreName": "BEING NICE - Say something nice to your brother (Any negative words to your brother cancels this for the day)",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Do something above and beyond to help out without being asked to",
+    "choreName": "HELPING OUT - Do something above and beyond to help out without being asked to",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "No fighting, complaining, whining or growling about anything",
+    "choreName": "FIGHTING - No fighting, complaining, whining or growling about anything",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Complete all homework, hangup book bag, shoes in bin, water bottles on counter, tablets plugged in",
+    "choreName": "SCHOOL STUFF - Complete all homework, hangup book bag, shoes in bin, water bottles on counter and ipads plugged in",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Bedroom clean, carpet nice, closet door closed, bed made nicely, dirty clothes in hamper, towels hung up and all clothes drawers closed",
+    "choreName": "BEDROOM - Bedroom clean, lights off after leaving, carpet nice, closet door closed, bed made nicely, dirty clothes in hamper, towels hung up and all clothes drawers closed",
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-      "choreName": "Brush teeth in the morning and night, and clean sink and counter",
+      "choreName": "BATHROOM - Brush teeth in the morning and night, clean sink and counter and toilet flushed",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
   },
   {
-    "choreName": "All dishes, cups, medicine cups cleaned off and in the dishwasher after every meal",
+    "choreName": "DISHES - All dishes, cups, medicine cups cleaned off and in the dishwasher after every meal",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "Lights and tv off after leaving a room and family clutter free",
+    "choreName": "LIVING ROOM - TV off after leaving a room and family clutter free",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
@@ -160,11 +160,11 @@ function startCoinCeremony(evt){
     var winningNumber
     for(i=0;i<7;i++){
       winningNumber = Math.floor(Math.random() * choreWinners.length);
-        if (i<4) {
+        if (i<5) {
           $(`#result${i}`).append(`Winning Chore #${i+1}: ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${choreChart[choreWinners[winningNumber]].caseyComplete} Coin!<br>Connor Wins ${choreChart[choreWinners[winningNumber]].connorComplete} Coin!`)
           choreWinners.splice(winningNumber, 1);
-          } else if (i===4){
-            $(`#result${i}`).append(`Winning Chore #${i+1}: ${choreChart[0].choreName}<br>Casey Wins ${choreChart[0].caseyComplete} Coin!<br>Connor Wins ${choreChart[0].connorComplete} Coin!`)
+          // } else if (i===4){
+          //   $(`#result${i}`).append(`Winning Chore #${i+1}: ${choreChart[0].choreName}<br>Casey Wins ${choreChart[0].caseyComplete} Coin!<br>Connor Wins ${choreChart[0].connorComplete} Coin!`)
           } else if (i===5){
             var numberOfBonusCoins = Math.floor(Math.random() * (3 - 2 + 1)) + 2;
             if(choreChart[1].caseyComplete === 1 && choreChart[1].connorComplete === 1){
@@ -178,7 +178,7 @@ function startCoinCeremony(evt){
             }
 
           } else if (i===6){
-            var bonusNumber = Math.floor(Math.random() * (4 - 1 + 1)+1);
+            var bonusNumber = Math.floor(Math.random() * (5 - 1 + 1)+1);
             console.log(bonusNumber);
             var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
             if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1 && choreChart[2].caseyComplete == 1 && choreChart[2].connorComplete == 1){
