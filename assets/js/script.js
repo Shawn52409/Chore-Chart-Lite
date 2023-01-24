@@ -26,24 +26,24 @@ var choreChart = [
     "connorComplete": false,
   },
   {
-    "choreName": "BEDROOM - Bedroom clean, lights off after leaving, carpet nice, closet door closed, bed made nicely, dirty clothes in hamper, towels hung up and all clothes drawers closed",
+    "choreName": "BEDROOM - Bedroom clean, lights off after leaving, bed made nicely, dirty clothes/towels in hamper and all drawers closed",
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-      "choreName": "BATHROOM - Brush teeth in the morning and night, clean sink and counter and toilet flushed",
+      "choreName": "BATHROOM - Brush teeth in the morning and night, clean sink and counter",
       "noChore": false,
       "caseyComplete": false,
       "connorComplete": false,
   },
   {
-    "choreName": "DISHES - All dishes, cups, medicine cups cleaned off and in the dishwasher after every meal",
+    "choreName": "DISHES - All dishes, cups, medicine cups cleaned off and in the sink after every meal",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
   },
   {
-    "choreName": "FAMILY ROOM - TV off after leaving and clutter free",
+    "choreName": "FAMILY ROOM - TV off after leaving, controllers put away, no socks and clutter free",
     "noChore": false,
     "caseyComplete": false,
     "connorComplete": false,
@@ -178,9 +178,9 @@ function startCoinCeremony(evt){
             }
 
           } else if (i===6){
-            var bonusNumber = Math.floor(Math.random() * (5 - 1 + 1)+1);
+            var bonusNumber = Math.floor(Math.random() * (4 - 1 + 1)+1);
             console.log(bonusNumber);
-            var numberOfBonusCoins = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
+            var numberOfBonusCoins = Math.floor(Math.random() * (4 - 3 + 1)) + 3;
             if(bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete == 1 && choreChart[2].caseyComplete == 1 && choreChart[2].connorComplete == 1){
               $(`#resultBonus`).append(`Today's ***BONUS*** Chore is: ${choreChart[choreWinners[winningNumber]].choreName}<br>Casey Wins ${numberOfBonusCoins} Coins!<br>Connor Wins ${numberOfBonusCoins} Coins!`)
             } else if (bonusNumber == 1 && choreChart[choreWinners[winningNumber]].caseyComplete == 1 && choreChart[choreWinners[winningNumber]].connorComplete != 1 && choreChart[2].caseyComplete == 1){
